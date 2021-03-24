@@ -1,0 +1,25 @@
+<div class="moon">
+  <div (click)="onClickMoon()">
+    <i class="fas fa-adjust"></i>
+  </div>
+</div>
+
+<div class="container">
+  <form [formGroup]="profileForm" class="box">
+    <h1>Registration</h1>
+    <input type="email" name="" formControlName="email" placeholder="Email" #emailSignup>
+    <input type="password" name="" formControlName="password" placeholder="Password" #passwordSignup>
+    <button (click)="onSignup(emailSignup.value, passwordSignup.value)">Login</button>
+  </form>
+
+  <a class="breadcrumbs" href="login">Login</a>
+
+<div class="middle">
+  <a class="btn" href="#">
+    <i class="fab fa-facebook-square"></i>
+  </a>
+  <a class="btn" href="#">
+    <i class='fab fa-google' ></i>
+  </a>
+</div>
+</div>
