@@ -1,2 +1,15 @@
-<p style="color: white;">Benvenuto nella dashboard</p>
-<button class="logout" (click)="logout()">Logout</button>
+<div class="moon">
+  <div id="icon-light" (click)="onClickMoonLight()">
+    <i class="far fa-lightbulb"></i>
+  </div>
+  <div id="icon-dark" (click)="onClickMoonDark()">
+    <i class="fas fa-lightbulb"></i>
+  </div>
+</div>
+
+<div class="container">
+  <p class="textDashboard">Benvenuto nella dashboard</p>
+  <button class="logout" (click)="logout()"><span class="span">Logout</span></button>
+</div>
+
+

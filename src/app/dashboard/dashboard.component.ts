@@ -1,3 +1,4 @@
+import { ThemeServiceService } from './../theme-service.service';
 import { AuthService } from './../auth.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
@@ -7,14 +8,30 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  @Output() isLogout = new EventEmitter<void>()
-  constructor(private authService: AuthService) { }
+  moon: any;
 
-  ngOnInit(): void {
+  @Output() isLogout = new EventEmitter<void>()
+
+  constructor(private authService: AuthService, private themeService: ThemeServiceService) { }
+  ngOnInit() {
+    this.themeService.setColor()
   }
 
   logout() {
     this.authService.logout()
     this.isLogout.emit();
+  }
+
+  onClickMoonLight() {
+    this.themeService.setColorDark();
+    this.moon = document.getElementById('icon-light').style.display="none";
+    this.moon = document.getElementById('icon-dark').style.display="block";
+    this.moon = document.getElementById('icon-dark').style.cursor="pointer";
+  }
+
+  onClickMoonDark() {
+    this.themeService.ngOnInit();
+    this.moon = document.getElementById('icon-dark').style.display="none";
+    this.moon = document.getElementById('icon-light').style.display="block";
   }
 }

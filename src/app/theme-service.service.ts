@@ -11,16 +11,18 @@ const mappaColori = {
     backgroundColorCard: '#C2B8B2',
     text: '#204B57',
     borderInput: '#125E8A',
+    textDashboard: 'black',
     border: '#197BBD',
-    social: '#6E9AB8'
+    social: '#6E9AB8',
   },
   dark: {
     background: '#031211',
     backgroundColorCard: '#191919',
     text: 'white',
     borderInput: '#3498db',
+    textDashboard: '#fff',
     border: '#2ecc71',
-    social: '#f1f1f1'
+    social: '#f1f1f1',
   }
 }
 
@@ -51,6 +53,8 @@ export class ThemeServiceService implements OnInit {
     this.light.addEventListener("click", () => { this.root.style.setProperty('--borderInput', mappaColori.light.borderInput);})
     this.light.addEventListener("click", () => { this.root.style.setProperty('--border', mappaColori.light.border);})
     this.light.addEventListener("click", () => { this.root.style.setProperty('--social', mappaColori.light.social);})
+    this.light.addEventListener("click", () => { this.root.style.setProperty('--textDashboard', mappaColori.light.textDashboard);})
+
   }
 
   setColorDark() {
@@ -62,5 +66,7 @@ export class ThemeServiceService implements OnInit {
     this.dark.addEventListener("click", () => { this.root.style.setProperty('--borderInput', mappaColori.dark.borderInput);})
     this.dark.addEventListener("click", () => { this.root.style.setProperty('--border', mappaColori.dark.border);})
     this.dark.addEventListener("click", () => { this.root.style.setProperty('--social', mappaColori.dark.social);})
+    this.dark.addEventListener("click", () => { this.root.style.setProperty('--textDashboard', mappaColori.dark.textDashboard);})
+
   }
 }

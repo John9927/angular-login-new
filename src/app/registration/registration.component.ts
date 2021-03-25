@@ -9,10 +9,23 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-
+  moon: any;
   constructor(private fb: FormBuilder, private authService: AuthService, private themeService: ThemeServiceService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.themeService.setColor()
+  }
+
+  onClickMoonLight() {
+    this.themeService.ngOnInit();
+    this.moon = document.getElementById('icon-light').style.display="none";
+    this.moon = document.getElementById('icon-dark').style.display="block";
+  }
+
+  onClickMoonDark() {
+    this.themeService.setColorDark();
+    this.moon = document.getElementById('icon-dark').style.display="none";
+    this.moon = document.getElementById('icon-light').style.display="block";
   }
 
   profileForm = this.fb.group({
@@ -20,14 +33,11 @@ export class RegistrationComponent implements OnInit {
     password: ['', Validators.minLength(6)],
   });
 
-
-  onClickMoon() {
-    this.themeService.setColor();
-  }
-
   async onSignup(email: string, password: string) {
     await this.authService.signup(email, password)
     if (this.authService.isLoggedIn) {
     }
   }
+
+
 }
