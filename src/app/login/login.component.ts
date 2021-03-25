@@ -8,7 +8,6 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  moon: any;
 
   constructor(private fb: FormBuilder, private authService:AuthService, private themeService: ThemeServiceService) { }
 
@@ -37,14 +36,14 @@ export class LoginComponent implements OnInit {
 
   onClickMoonLight() {
     this.themeService.setColorDark();
-    this.moon = document.getElementById('icon-light').style.display="none";
-    this.moon = document.getElementById('icon-dark').style.display="block";
-    this.moon = document.getElementById('icon-dark').style.cursor="pointer";
+    document.getElementById('icon-light').style.display="none";
+    document.getElementById('icon-dark').style.display="block";
+    document.getElementById('icon-dark').style.cursor="pointer";
   }
 
   onClickMoonDark() {
     this.themeService.ngOnInit();
-    this.moon = document.getElementById('icon-dark').style.display="none";
-    this.moon = document.getElementById('icon-light').style.display="block";
+    document.getElementById('icon-dark').style.display="none";
+    document.getElementById('icon-light').style.display="block";
   }
 }
