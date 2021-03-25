@@ -1,4 +1,4 @@
-import { ThemeServiceService } from './../theme-service.service';
+import { ThemeServiceService } from '../theme.service';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -14,6 +14,10 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit() {
     this.themeService.setColor()
+  }
+
+  createUserViaGoogle() {
+    this.authService.createUserViaGoogle();
   }
 
   onClickMoonLight() {

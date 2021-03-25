@@ -1,4 +1,4 @@
-import { ThemeServiceService } from './../theme-service.service';
+import { ThemeServiceService } from '../theme.service';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -26,6 +26,11 @@ export class LoginComponent implements OnInit {
     if(this.authService.isLoggedIn) {
     }
   }
+
+  createUserViaGoogle() {
+    this.authService.createUserViaGoogle();
+  }
+
   onClickMoonLight() {
     this.themeService.setColorDark();
     this.moon = document.getElementById('icon-light').style.display="none";

@@ -1,4 +1,4 @@
-import { ThemeServiceService } from './../theme-service.service';
+import { ThemeServiceService } from '../theme.service';
 import { AuthService } from './../auth.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 

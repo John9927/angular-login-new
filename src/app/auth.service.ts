@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
@@ -8,9 +9,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class AuthService {
   isLoggedIn = false;
 
-  constructor(public firebaseAuth: AngularFireAuth, public router: Router,) {
-
-  }
+  constructor(public firebaseAuth: AngularFireAuth, public router: Router,) {}
 
   /* Sign up */
   async signup(email: string, password: string) {
@@ -60,6 +59,25 @@ export class AuthService {
       console.log('Code:', errorCode + 'Message:', errorMessage);
       alert(error);
     });
+  }
+
+  // SignUp & Sign In with Google
+
+  async createUserViaGoogle() {
+    await this.firebaseAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .then(credential => {
+          this.isLoggedIn = true
+          this.router.navigateByUrl('dashboard');
+          localStorage.setItem('user', JSON.stringify(credential.user))
+      }, error => {
+          alert(error.message);
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log('Code: ', errorCode + 'Message:', errorMessage);
+        alert(error);
+      });
   }
 
 }
