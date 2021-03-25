@@ -1,3 +1,4 @@
+import { ThemeServiceService } from './../theme-service.service';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -9,7 +10,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private authService: AuthService) { }
+  constructor(private fb: FormBuilder, private authService: AuthService, private themeService: ThemeServiceService) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +22,7 @@ export class RegistrationComponent implements OnInit {
 
 
   onClickMoon() {
-    console.log("Ciao")
+    this.themeService.setColor();
   }
 
   async onSignup(email: string, password: string) {

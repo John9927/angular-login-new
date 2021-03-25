@@ -2,5 +2,22 @@ html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: #031211;
+  background: var(--background);
+}
+
+:root {
+  --background: #031211;
+  --backgroundColorCard: #191919;
+  --text: white;
+  --borderInput: #3498db;
+  --border: #2ecc71;
+  --social: #f1f1f1;
+
+  /* Light */
+  /* --background: #F6F4F3;
+  --background-color-card: #C2B8B2;
+  --text: #204B57;
+  --border-input: #125E8A;
+  --border: #197BBD;
+  --social: #6E9AB8; */
 }

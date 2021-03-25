@@ -1,3 +1,4 @@
+import { ThemeServiceService } from './../theme-service.service';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -8,9 +9,12 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private authService:AuthService) { }
+  moon: any;
 
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder, private authService:AuthService, private themeService: ThemeServiceService) { }
+
+  ngOnInit() {
+    this.themeService.setColor()
   }
 
   profileForm = this.fb.group({
@@ -18,12 +22,20 @@ export class LoginComponent implements OnInit {
     password: ['', Validators.minLength(6)],
   });
 
-  onClickMoon() {
-    console.log("Ciao")
-  }
   async onSignIn(email: string, password: string) {
     await this.authService.signin(email, password)
     if(this.authService.isLoggedIn) {
     }
+  }
+  onClickMoonLight() {
+    this.themeService.setColor();
+    this.moon = document.getElementById('icon-light').style.display="none";
+    this.moon = document.getElementById('icon-dark').style.display="block";
+  }
+
+  onClickMoonDark() {
+    this.themeService.setColorDark();
+    this.moon = document.getElementById('icon-dark').style.display="none";
+    this.moon = document.getElementById('icon-light').style.display="block";
   }
 }

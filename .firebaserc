@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "login-angular-new": {
+      "hosting": {
+        "angular-login-new": [
+          "login-angular-new"
+        ]
+      }
+    }
+  }
+}
