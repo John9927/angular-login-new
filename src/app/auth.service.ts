@@ -80,4 +80,25 @@ export class AuthService {
       });
   }
 
+
+  FacebookAuth() {
+    return this.AuthLogin(new firebase.auth.FacebookAuthProvider());
+  }
+
+  // Auth logic to run auth providers
+  AuthLogin(provider) {
+    return this.firebaseAuth.signInWithPopup(provider)
+      .then((result) => {
+          this.isLoggedIn = true
+          this.router.navigateByUrl('dashboard');
+          localStorage.setItem('user', JSON.stringify(result.user))
+          console.log('You have been successfully logged in!')
+          this.isLoggedIn = true;
+          this.router.navigateByUrl("dashboard");
+      }).catch((error) => {
+        console.log(error)
+        alert(error);
+      })
+  }
+
 }

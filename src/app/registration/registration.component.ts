@@ -20,6 +20,10 @@ export class RegistrationComponent implements OnInit {
     this.authService.createUserViaGoogle();
   }
 
+  createUserViaFacebook() {
+    this.authService.FacebookAuth();
+  }
+
   onClickMoonLight() {
     this.themeService.ngOnInit();
     this.moon = document.getElementById('icon-light').style.display="none";

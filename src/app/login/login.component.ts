@@ -31,6 +31,10 @@ export class LoginComponent implements OnInit {
     this.authService.createUserViaGoogle();
   }
 
+  createUserViaFacebook() {
+    this.authService.FacebookAuth();
+  }
+
   onClickMoonLight() {
     this.themeService.setColorDark();
     this.moon = document.getElementById('icon-light').style.display="none";
