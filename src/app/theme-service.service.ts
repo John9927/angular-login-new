@@ -1,10 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
 
-const temi = {
-  light:'dark',
-  dark: 'light'
-}
-
 const mappaColori = {
   light: {
     background: '#F6F4F3',
@@ -31,7 +26,6 @@ const mappaColori = {
 })
 
 export class ThemeServiceService implements OnInit {
-
   root: any;
   light: any;
   dark: any;
@@ -54,7 +48,6 @@ export class ThemeServiceService implements OnInit {
     this.light.addEventListener("click", () => { this.root.style.setProperty('--border', mappaColori.light.border);})
     this.light.addEventListener("click", () => { this.root.style.setProperty('--social', mappaColori.light.social);})
     this.light.addEventListener("click", () => { this.root.style.setProperty('--textDashboard', mappaColori.light.textDashboard);})
-
   }
 
   setColorDark() {
@@ -67,6 +60,5 @@ export class ThemeServiceService implements OnInit {
     this.dark.addEventListener("click", () => { this.root.style.setProperty('--border', mappaColori.dark.border);})
     this.dark.addEventListener("click", () => { this.root.style.setProperty('--social', mappaColori.dark.social);})
     this.dark.addEventListener("click", () => { this.root.style.setProperty('--textDashboard', mappaColori.dark.textDashboard);})
-
   }
 }
