@@ -28,13 +28,13 @@ export class LoginComponent implements OnInit {
     }
   }
   onClickMoonLight() {
-    this.themeService.setColor();
+    this.themeService.ngOnInit();
     this.moon = document.getElementById('icon-light').style.display="none";
     this.moon = document.getElementById('icon-dark').style.display="block";
   }
 
   onClickMoonDark() {
-    this.themeService.setColorDark();
+    this.themeService.ngOnInit();
     this.moon = document.getElementById('icon-dark').style.display="none";
     this.moon = document.getElementById('icon-light').style.display="block";
   }

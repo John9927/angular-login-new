@@ -38,6 +38,8 @@ export class ThemeServiceService implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.setColor();
+    this.setColorDark();
   }
 
   setColor() {
