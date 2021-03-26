@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder, private authService:AuthService, private themeService: ThemeServiceService) { }
 
   ngOnInit() {
-    this.themeService.setColor()
+    // this.themeService.setColor()
   }
 
   profileForm = this.fb.group({
@@ -34,16 +34,16 @@ export class LoginComponent implements OnInit {
     this.authService.FacebookAuth();
   }
 
-  onClickMoonLight() {
-    this.themeService.setColorDark();
-    document.getElementById('icon-light').style.display="none";
-    document.getElementById('icon-dark').style.display="block";
-    document.getElementById('icon-dark').style.cursor="pointer";
-  }
+  // onClickMoonLight() {
+  //   this.themeService.setColorDark();
+  //   document.getElementById('icon-light').style.display="none";
+  //   document.getElementById('icon-dark').style.display="block";
+  //   document.getElementById('icon-dark').style.cursor="pointer";
+  // }
 
-  onClickMoonDark() {
-    this.themeService.ngOnInit();
-    document.getElementById('icon-dark').style.display="none";
-    document.getElementById('icon-light').style.display="block";
-  }
+  // onClickMoonDark() {
+  //   this.themeService.ngOnInit();
+  //   document.getElementById('icon-dark').style.display="none";
+  //   document.getElementById('icon-light').style.display="block";
+  // }
 }

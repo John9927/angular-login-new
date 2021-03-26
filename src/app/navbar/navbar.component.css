@@ -1,0 +1,28 @@
+.moon {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+#icon-dark {
+  display: none;
+}
+#icon-light {
+  cursor: pointer;
+}
+
+svg {
+  height: 100%;
+  line-height: 90px;
+  font-size: 26px;
+  transition: 0.2s linear;
+  color: var(--borderInput);
+  width: 60%;
+  padding: 13px;
+  margin-top: -13px;
+}
+
+svg:hover {
+  transform: scale(1.3);
+  color: var(--social);
+}

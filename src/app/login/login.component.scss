@@ -1,18 +1,3 @@
- /* Moon */
-
- .moon {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-#icon-dark {
-  display: none;
-}
-#icon-light {
-  cursor: pointer;
-}
-
 .container {
   width: 300px;
   padding: 40px;
@@ -94,17 +79,6 @@
   position: relative;
 }
 
-.btn::before {
-  content: "";
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  background: var(--borderInput);
-  transform: rotate(45deg);
-  left: -110%;
-  top: 90%;
-}
-
 svg {
   height: 100%;
   line-height: 90px;
@@ -120,6 +94,18 @@ svg:hover {
   transform: scale(1.3);
   color: var(--social);
 }
+
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: var(--borderInput);
+  transform: rotate(45deg);
+  left: -110%;
+  top: 90%;
+}
+
 
 .btn:hover::before {
   animation: social 0.7s 1;
