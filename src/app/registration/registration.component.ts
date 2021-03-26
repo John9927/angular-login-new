@@ -12,27 +12,6 @@ export class RegistrationComponent implements OnInit {
   constructor(private fb: FormBuilder, private authService: AuthService, private themeService: ThemeServiceService) { }
 
   ngOnInit() {
-    this.themeService.setColor()
-  }
-
-  createUserViaGoogle() {
-    this.authService.createUserViaGoogle();
-  }
-
-  createUserViaFacebook() {
-    this.authService.FacebookAuth();
-  }
-
-  onClickMoonLight() {
-    this.themeService.ngOnInit();
-    document.getElementById('icon-light').style.display="none";
-    document.getElementById('icon-dark').style.display="block";
-  }
-
-  onClickMoonDark() {
-    this.themeService.setColorDark();
-    document.getElementById('icon-dark').style.display="none";
-    document.getElementById('icon-light').style.display="block";
   }
 
   profileForm = this.fb.group({

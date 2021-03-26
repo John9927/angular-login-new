@@ -11,9 +11,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private authService:AuthService, private themeService: ThemeServiceService) { }
 
-  ngOnInit() {
-    // this.themeService.setColor()
-  }
+  ngOnInit() {}
 
   profileForm = this.fb.group({
     email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
@@ -25,25 +23,4 @@ export class LoginComponent implements OnInit {
     if(this.authService.isLoggedIn) {
     }
   }
-
-  createUserViaGoogle() {
-    this.authService.createUserViaGoogle();
-  }
-
-  createUserViaFacebook() {
-    this.authService.FacebookAuth();
-  }
-
-  // onClickMoonLight() {
-  //   this.themeService.setColorDark();
-  //   document.getElementById('icon-light').style.display="none";
-  //   document.getElementById('icon-dark').style.display="block";
-  //   document.getElementById('icon-dark').style.cursor="pointer";
-  // }
-
-  // onClickMoonDark() {
-  //   this.themeService.ngOnInit();
-  //   document.getElementById('icon-dark').style.display="none";
-  //   document.getElementById('icon-light').style.display="block";
-  // }
 }
