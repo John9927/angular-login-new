@@ -2,6 +2,11 @@
 <app-navbar></app-navbar>
 <!-- Container -->
 <div class="container">
+
+  <div class="breadcrumbs__container">
+    <a class="breadcrumbs" href="registration">Registration</a>
+  </div>
+
   <form [formGroup]="profileForm" class="box">
     <h1>Login</h1>
     <input type="email" name="" formControlName="email" placeholder="Email" #emailSignup>
@@ -9,7 +14,6 @@
     <button (click)="onSignIn(emailSignup.value, passwordSignup.value)">Login</button>
   </form>
 
-  <a class="breadcrumbs" href="registration">Registration</a>
 
 <!-- Social -->
 <app-social></app-social>

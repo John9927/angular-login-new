@@ -19,7 +19,7 @@ import { SocialComponent } from './social/social.component';
     RegistrationComponent,
     DashboardComponent,
     NavbarComponent,
-    SocialComponent
+    SocialComponent,
   ],
   imports: [
     BrowserModule,

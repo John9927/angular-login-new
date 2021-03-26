@@ -15,6 +15,18 @@
 .breadcrumbs {
   text-decoration: none;
 }
+.breadcrumbs__container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin-top: -60px;
+  background: var(--backgroundColorCard);
+  padding: 10px;
+  border-radius: 8px;
+  margin-left: -40.3px;
+  width: 100px;
+  transition: 1s ease;
+}
 
 .box  h1{
   color: var(--text);
