@@ -2,15 +2,6 @@ import { Injectable, OnInit } from '@angular/core';
 
 const mappaColori = {
   light: {
-    background: '#F6F4F3',
-    backgroundColorCard: '#C2B8B2',
-    text: '#204B57',
-    borderInput: '#125E8A',
-    textDashboard: 'black',
-    border: '#197BBD',
-    social: '#6E9AB8',
-  },
-  dark: {
     background: '#031211',
     backgroundColorCard: '#191919',
     text: 'white',
@@ -18,6 +9,15 @@ const mappaColori = {
     textDashboard: '#fff',
     border: '#2ecc71',
     social: '#f1f1f1',
+  },
+  dark: {
+    background: '#F6F4F3',
+    backgroundColorCard: '#C2B8B2',
+    text: '#204B57',
+    borderInput: '#125E8A',
+    textDashboard: 'black',
+    border: '#197BBD',
+    social: '#6E9AB8',
   }
 }
 

@@ -3,14 +3,15 @@ html {
   padding: 0;
   font-family: sans-serif;
   background: var(--background);
+  transition: 1s ease;
 }
 
 :root {
-  --background: #031211;
-  --backgroundColorCard: #191919;
-  --text: white;
-  --borderInput: #3498db;
-  --border: #2ecc71;
-  --social: #f1f1f1;
-  --textDashboard: white;
+  --background: #F6F4F3;
+  --backgroundColorCard: #C2B8B2;
+  --text: #204B57;
+  --borderInput: #125E8A;
+  --textDashboard: black;
+  --border: #197BBD;
+  --social: #6E9AB8;
 }
