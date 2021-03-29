@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onClickMoonDark() {
-    this.themeService.ngOnInit();
+    this.themeService.setColor();
     this.moon = document.getElementById('icon-dark').style.display="none";
     this.moon = document.getElementById('icon-light').style.display="block";
   }

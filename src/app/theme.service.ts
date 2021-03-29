@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 const mappaColori = {
   light: {
@@ -20,27 +20,24 @@ const mappaColori = {
     social: '#6E9AB8',
   }
 }
+const currentTheme = localStorage.getItem('theme');
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class ThemeServiceService implements OnInit {
+export class ThemeServiceService {
   root: any;
   light: any;
   dark: any;
-  temaCorrente: 'light';
+  temaCorrente: any;
+  currentTheme: any;
 
   constructor() { }
 
-  ngOnInit() {
-    this.setColor();
-    this.setColorDark();
-  }
-
   setColor() {
     this.root = document.documentElement;
-    this.light = document.getElementById('icon-light')
+    this.light = document.getElementById('icon-light');
     this.light.addEventListener("click", () => { this.root.style.setProperty('--background', mappaColori.light.background);})
     this.light.addEventListener("click", () => { this.root.style.setProperty('--backgroundColorCard', mappaColori.light.backgroundColorCard);})
     this.light.addEventListener("click", () => { this.root.style.setProperty('--text', mappaColori.light.text);})
@@ -48,11 +45,13 @@ export class ThemeServiceService implements OnInit {
     this.light.addEventListener("click", () => { this.root.style.setProperty('--border', mappaColori.light.border);})
     this.light.addEventListener("click", () => { this.root.style.setProperty('--social', mappaColori.light.social);})
     this.light.addEventListener("click", () => { this.root.style.setProperty('--textDashboard', mappaColori.light.textDashboard);})
+    localStorage.setItem(currentTheme, 'light');
+    console.log(localStorage)
   }
 
   setColorDark() {
     this.root = document.documentElement;
-    this.dark = document.getElementById('icon-dark')
+    this.dark = document.getElementById('icon-dark');
     this.dark.addEventListener("click", () => { this.root.style.setProperty('--background', mappaColori.dark.background);})
     this.dark.addEventListener("click", () => { this.root.style.setProperty('--backgroundColorCard', mappaColori.dark.backgroundColorCard);})
     this.dark.addEventListener("click", () => { this.root.style.setProperty('--text', mappaColori.dark.text);})
@@ -60,5 +59,7 @@ export class ThemeServiceService implements OnInit {
     this.dark.addEventListener("click", () => { this.root.style.setProperty('--border', mappaColori.dark.border);})
     this.dark.addEventListener("click", () => { this.root.style.setProperty('--social', mappaColori.dark.social);})
     this.dark.addEventListener("click", () => { this.root.style.setProperty('--textDashboard', mappaColori.dark.textDashboard);})
+    localStorage.setItem(currentTheme, 'dark');
+    console.log(localStorage)
   }
 }

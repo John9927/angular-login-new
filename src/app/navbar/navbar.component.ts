@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
   }
 
   onClickMoonDark() {
-    this.themeService.ngOnInit();
+    this.themeService.setColor();
     document.getElementById('icon-dark').style.display="none";
     document.getElementById('icon-light').style.display="block";
   }
