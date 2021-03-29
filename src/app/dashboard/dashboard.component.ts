@@ -1,4 +1,3 @@
-import { ThemeServiceService } from '../theme.service';
 import { AuthService } from './../auth.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
@@ -12,9 +11,8 @@ export class DashboardComponent implements OnInit {
 
   @Output() isLogout = new EventEmitter<void>()
 
-  constructor(private authService: AuthService, private themeService: ThemeServiceService) { }
+  constructor(private authService: AuthService) { }
   ngOnInit() {
-    this.themeService.setColor()
   }
 
   logout() {
@@ -22,16 +20,4 @@ export class DashboardComponent implements OnInit {
     this.isLogout.emit();
   }
 
-  onClickMoonLight() {
-    this.themeService.setColorDark();
-    this.moon = document.getElementById('icon-light').style.display="none";
-    this.moon = document.getElementById('icon-dark').style.display="block";
-    this.moon = document.getElementById('icon-dark').style.cursor="pointer";
-  }
-
-  onClickMoonDark() {
-    this.themeService.setColor();
-    this.moon = document.getElementById('icon-dark').style.display="none";
-    this.moon = document.getElementById('icon-light').style.display="block";
-  }
 }

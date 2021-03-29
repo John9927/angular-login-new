@@ -1,19 +1,21 @@
 <!-- Navbar -->
 <app-navbar></app-navbar>
-<!-- Container -->
-<div class="container">
 
-  <div class="breadcrumbs__container">
-    <a class="breadcrumbs" href="registration">Registration</a>
+<!-- Container -->
+  <div theme class="container">
+
+    <div class="breadcrumbs__container">
+      <a class="breadcrumbs" href="registration">Registration</a>
+    </div>
+
+    <form [formGroup]="profileForm" class="box">
+      <h1>Login</h1>
+      <input type="email" name="" formControlName="email" placeholder="Email" #emailSignup>
+      <input type="password" name="" formControlName="password" placeholder="Password" #passwordSignup>
+      <button (click)="onSignIn(emailSignup.value, passwordSignup.value)">SIGN UP</button>
+    </form>
+
+  <!-- Social -->
+  <app-social></app-social>
   </div>
 
-  <form [formGroup]="profileForm" class="box">
-    <h1>Login</h1>
-    <input type="email" name="" formControlName="email" placeholder="Email" #emailSignup>
-    <input type="password" name="" formControlName="password" placeholder="Password" #passwordSignup>
-    <button (click)="onSignIn(emailSignup.value, passwordSignup.value)">SIGN UP</button>
-  </form>
-
-<!-- Social -->
-<app-social></app-social>
-</div>

@@ -12,6 +12,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SocialComponent } from './social/social.component';
+import { ThemeModule, lightTheme, darkTheme } from './theme';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,10 @@ import { SocialComponent } from './social/social.component';
     FontAwesomeModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
+    ThemeModule.forRoot({
+      themes: [lightTheme, darkTheme],
+      active: 'light'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

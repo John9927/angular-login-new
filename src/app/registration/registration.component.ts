@@ -1,7 +1,7 @@
-import { ThemeServiceService } from '../theme.service';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ThemeService } from '../theme';
 
 @Component({
   selector: 'app-registration',
@@ -9,10 +9,9 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-  constructor(private fb: FormBuilder, private authService: AuthService, private themeService: ThemeServiceService) { }
+  constructor(private fb: FormBuilder, private authService: AuthService, private themeServices: ThemeService  ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   profileForm = this.fb.group({
     email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
@@ -24,6 +23,4 @@ export class RegistrationComponent implements OnInit {
     if (this.authService.isLoggedIn) {
     }
   }
-
-
 }

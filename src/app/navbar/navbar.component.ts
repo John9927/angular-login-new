@@ -1,5 +1,5 @@
-import { ThemeServiceService } from './../theme.service';
 import { Component, OnInit } from '@angular/core';
+import { ThemeService } from '../theme';
 
 @Component({
   selector: 'app-navbar',
@@ -8,23 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private themeService: ThemeServiceService) { }
+  constructor(private themeService: ThemeService) { }
 
   ngOnInit() {
-    this.themeService.setColor()
   }
 
-  onClickMoonLight() {
-    this.themeService.setColorDark();
-    document.getElementById('icon-light').style.display="none";
-    document.getElementById('icon-dark').style.display="block";
-    document.getElementById('icon-dark').style.cursor="pointer";
+  toggle() {
+    const active = this.themeService.getActiveTheme();
+    if (active.name === 'light') {
+      this.themeService.setTheme('dark');
+    } else {
+      this.themeService.setTheme('light');
+    }
   }
-
-  onClickMoonDark() {
-    this.themeService.setColor();
-    document.getElementById('icon-dark').style.display="none";
-    document.getElementById('icon-light').style.display="block";
-  }
-
 }
